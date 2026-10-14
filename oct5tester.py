@@ -3,51 +3,51 @@
 
 
 
-class Node():
+# class Node():
 
-    def __init__(self,key):
-        self.key = key
-        self.lchild = None
-        self.rchild = None
+#     def __init__(self,key):
+#         self.key = key
+#         self.lchild = None
+#         self.rchild = None
 
-    def print_node(self, level=0):
-        if self.rChild != None:
-            self.rChild.print_node(level + 1)
+#     def print_node(self, level=0):
+#         if self.rChild != None:
+#             self.rChild.print_node(level + 1)
 
-        print(' ' * 4 * level + '->', self.key)
+#         print(' ' * 4 * level + '->', self.key)
 
-        if self.lChild != None:
-            self.lChild.print_node(level + 1)
-
-
-    def in_order_traversal(self,aNode):
-        if aNode != None:
-            aNode.in_order_traversal(self.lchild)
-            print(aNode.key, end=" ")
-            aNode.in_order_traversal(self.rchild)
-
-    def pre_order_traversal(self,aNode):
-        if aNode != None:
-            print(aNode.key, end=" ")
-            aNode.pre_order_traversal(self.lchild)
-            aNode.pre_order_traversal(self.rchild)
+#         if self.lChild != None:
+#             self.lChild.print_node(level + 1)
 
 
-    def post_order_traversal(self,aNode):
-        if aNode != None:
-            aNode.pre_order_traversal(self.lchild)
-            aNode.pre_order_traversal(self.rchild)
-            print(aNode.key, end=" ")
+#     def in_order_traversal(self,aNode):
+#         if aNode != None:
+#             aNode.in_order_traversal(self.lchild)
+#             print(aNode.key, end=" ")
+#             aNode.in_order_traversal(self.rchild)
+
+#     def pre_order_traversal(self,aNode):
+#         if aNode != None:
+#             print(aNode.key, end=" ")
+#             aNode.pre_order_traversal(self.lchild)
+#             aNode.pre_order_traversal(self.rchild)
 
 
-class BST():
-    def __init__(self):
-        self.root=None
+#     def post_order_traversal(self,aNode):
+#         if aNode != None:
+#             aNode.pre_order_traversal(self.lchild)
+#             aNode.pre_order_traversal(self.rchild)
+#             print(aNode.key, end=" ")
 
-    def print(self,lvl):
-        self.root.print_node(lvl)
 
-    def insert(self):
+# class BST():
+#     def __init__(self):
+#         self.root=None
+
+#     def print(self,lvl):
+#         self.root.print_node(lvl)
+
+#     def insert(self):
 
 
 
