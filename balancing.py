@@ -1,5 +1,4 @@
 '''
-File: balancing.py
 Description: Generate all combinations of balanced parentheses for a given number of pairs.
 '''
 
