@@ -1,12 +1,5 @@
 '''
-File: balancing.py
 Description: Generate all combinations of balanced parentheses for a given number of pairs.
-
-Student Name: Mia Garza
-Student UT EID: mkg2545
-
-Partner Name: Nayantara Roy
-Partner UT EID: nr27397
 '''
 
 
