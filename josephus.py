@@ -1,13 +1,8 @@
 '''
-File: josephus.py
+
 Description: create a circular linked list having the number of soldier specified. 
 Your program will print out the order in which the soldiers get eliminated.
 
-Student Name: Mia Garza
-Student UT EID: mkg2545
-
-Partner Name: Nayantara Roy
-Partner UT EID: nr27397
 '''
 
 
