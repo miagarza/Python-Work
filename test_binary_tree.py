@@ -2,15 +2,12 @@
 
 #  File: TestBinaryTree.py
 
-#  Description:
+#  Description: performing methods on binary trees
 
-#  Student Name:
+#  Student Name: Mia Garza
 
-#  Student UT EID:
+#  Student UT EID: mkg2545
 
-#  Partner Name:
-
-#  Partner UT EID:
 
 #  Course Name: CS 313E
 
@@ -18,7 +15,7 @@
 
 #  Date Created:
 
-#  Date Last Modified:
+#  Date Last Modified: Oct 22
 
 
 import sys
@@ -86,36 +83,110 @@ class Tree(object):
                 parent.rChild = new_node
             return
 
+
+
+
+
     # Returns the range of values stored in a binary search tree of integers.
     # The range of values equals the maximum value in the binary search tree minus the minimum value.
     # If there is one value in the tree the range is 0. If the tree is empty the range is undefined.
     def range(self):
 
+        if self.root is None:
+            return "Range Undefined"
+
+        if self.root==1:
+            return 1
+
+        current=self.root
+        while current.lChild is not None:
+            current=current.lChild
+        mini=current.data 
+
+
+        current=self.root
+        while current.rChild is not None:
+            current=current.rChild
+        maxi=current.data
+
+        return maxi-mini
+
+
 
     # Returns a list of nodes at a given level from left to right
     def get_level(self, level):
+
+        if self.root is None:
+            return []
+
+        currentlvl=[self.root]
+        for i in range(level):
+            next=[]
+            for node in currentlvl:
+                if node.lChild is not None:
+                    next.append(node.lChild)
+                if node.rChild is not None:
+                    next.append(node.rChild)
+            currentlvl=next
+        return currentlvl
+
+
+        
    
 
 
     # Returns the list of the node that you see from left side
     # The order of the output should be from top to down
     def left_side_view(self):
+        if self.root is None:
+            return []
+
+        result=[]
+        leftlist=[self.root]
+
+        while len(leftlist)>0:
+            result.append(leftlist[0].data)
+            next=[]
+            for node in leftlist:
+                if node.lChild is not None:
+                    next.append(node.lChild)
+                if node.rChild is not None:
+                    next.append(node.rChild)
+            leftlist = next
+        return result
+
 
 
     # returns the sum of the value of all leaves.
     # a leaf node does not have any children.
     def sum_leaf_nodes(self):
-  
+        
+        if self.root is None:
+            return 0
 
+        total=0
+        nodes=[self.root]
 
+        while len(nodes)>0:
+            current=nodes.pop()
+            if current.lChild is None and current.rChild is None:
+                total+=current.data
+            else:
+                if current.lChild is not None:
+                    nodes.append(current.lChild) 
+                #sum1+=current.data
+                if current.rChild is not None:
+                    nodes.append(current.rChild)
 
-
+        return total
+        
 
 def make_tree(data):
     tree = Tree()
     for d in data:
         tree.insert(d)
     return tree
+
 
 
 # Develop your own main function or test cases to be able to develop.
