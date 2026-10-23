@@ -28,6 +28,7 @@ class Node (object):
         self.lChild = None
         self.rChild = None
 
+
     def print_node(self, level=0):
 
         if self.lChild != None:
@@ -38,6 +39,7 @@ class Node (object):
         if self.rChild != None:
             self.rChild.print_node(level + 1)
 
+
     def get_height(self):
         if self.lChild != None and self.rChild != None:
             return 1 + max(self.lChild.get_height(), self.rChild.get_height())
@@ -47,6 +49,26 @@ class Node (object):
             return 1 + self.rChild.get_height()
         else:
             return 1
+
+#autograder wasnt working so I had to use the Propety functions. I consulted the EdDiscussion but the 
+#proposed solution wasnt doing anything. FreeCodeCamp had recommendations on how to fix it
+# https://www.freecodecamp.org/news/python-property-decorator/
+
+    @property
+    def lchild(self):
+        return self.lChild
+
+    @lchild.setter
+    def lchild(self, value):
+        self.lChild = value
+
+    @property
+    def rchild(self):
+        return self.rChild
+
+    @rchild.setter
+    def rchild(self, value):
+        self.rChild = value
 
 
 class Tree(object):
@@ -99,14 +121,14 @@ class Tree(object):
             return 1
 
         current=self.root
-        while current.lChild is not None:
-            current=current.lChild
+        while current.lchild is not None:
+            current=current.lchild
         mini=current.data 
 
 
         current=self.root
-        while current.rChild is not None:
-            current=current.rChild
+        while current.rchild is not None:
+            current=current.rchild
         maxi=current.data
 
         return maxi-mini
@@ -123,10 +145,10 @@ class Tree(object):
         for i in range(level):
             next=[]
             for node in currentlvl:
-                if node.lChild is not None:
-                    next.append(node.lChild)
-                if node.rChild is not None:
-                    next.append(node.rChild)
+                if node.lchild is not None:
+                    next.append(node.lchild)
+                if node.rchild is not None:
+                    next.append(node.rchild)
             currentlvl=next
         return currentlvl
 
@@ -148,10 +170,10 @@ class Tree(object):
             result.append(leftlist[0].data)
             next=[]
             for node in leftlist:
-                if node.lChild is not None:
-                    next.append(node.lChild)
-                if node.rChild is not None:
-                    next.append(node.rChild)
+                if node.lchild is not None:
+                    next.append(node.lchild)
+                if node.rchild is not None:
+                    next.append(node.rchild)
             leftlist = next
         return result
 
@@ -169,14 +191,14 @@ class Tree(object):
 
         while len(nodes)>0:
             current=nodes.pop()
-            if current.lChild is None and current.rChild is None:
+            if current.lchild is None and current.rchild is None:
                 total+=current.data
             else:
-                if current.lChild is not None:
-                    nodes.append(current.lChild) 
+                if current.lchild is not None:
+                    nodes.append(current.lchild) 
                 #sum1+=current.data
-                if current.rChild is not None:
-                    nodes.append(current.rChild)
+                if current.rchild is not None:
+                    nodes.append(current.rchild)
 
         return total
         
