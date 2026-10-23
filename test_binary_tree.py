@@ -1,5 +1,3 @@
-
-
 #  File: TestBinaryTree.py
 
 #  Description: performing methods on binary trees
@@ -25,50 +23,30 @@ class Node (object):
     # constructor
     def __init__(self, data):
         self.data = data
-        self.lChild = None
-        self.rChild = None
+        self.lchild = None
+        self.rchild = None
 
 
     def print_node(self, level=0):
 
-        if self.lChild != None:
-            self.lChild.print_node(level + 1)
+        if self.lchild != None:
+            self.lchild.print_node(level + 1)
 
         print(' ' * 3 * level + '->', self.data)
 
-        if self.rChild != None:
-            self.rChild.print_node(level + 1)
+        if self.rchild != None:
+            self.rchild.print_node(level + 1)
 
 
     def get_height(self):
-        if self.lChild != None and self.rChild != None:
-            return 1 + max(self.lChild.get_height(), self.rChild.get_height())
-        elif self.lChild != None:
-            return 1 + self.lChild.get_height()
-        elif self.rChild != None:
-            return 1 + self.rChild.get_height()
+        if self.lchild != None and self.rchild != None:
+            return 1 + max(self.lchild.get_height(), self.rchild.get_height())
+        elif self.lchild != None:
+            return 1 + self.lchild.get_height()
+        elif self.rchild != None:
+            return 1 + self.rchild.get_height()
         else:
             return 1
-
-#autograder wasnt working so I had to use the Propety functions. I consulted the EdDiscussion but the 
-#proposed solution wasnt doing anything. FreeCodeCamp had recommendations on how to fix it
-# https://www.freecodecamp.org/news/python-property-decorator/
-
-    @property
-    def lchild(self):
-        return self.lChild
-
-    @lchild.setter
-    def lchild(self, value):
-        self.lChild = value
-
-    @property
-    def rchild(self):
-        return self.rChild
-
-    @rchild.setter
-    def rchild(self, value):
-        self.rChild = value
 
 
 class Tree(object):
@@ -95,14 +73,14 @@ class Tree(object):
             while curr != None:
                 parent = curr
                 if data < curr.data:
-                    curr = curr.lChild
+                    curr = curr.lchild
                 else:
-                    curr = curr.rChild
+                    curr = curr.rchild
             # inserts new node based on comparision to parent node
             if data < parent.data:
-                parent.lChild = new_node
+                parent.lchild = new_node
             else:
-                parent.rChild = new_node
+                parent.rchild = new_node
             return
 
 
