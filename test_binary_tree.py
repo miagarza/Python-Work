@@ -1,19 +1,5 @@
-#  File: TestBinaryTree.py
-
 #  Description: performing methods on binary trees
 
-#  Student Name: Mia Garza
-
-#  Student UT EID: mkg2545
-
-
-#  Course Name: CS 313E
-
-#  Unique Number:
-
-#  Date Created:
-
-#  Date Last Modified: Oct 22
 
 
 import sys
