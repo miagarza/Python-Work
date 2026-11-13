@@ -1,24 +1,9 @@
-"""#  File: ExpressionTree.py
+"""
 
 #  Description: The expression will be a valid infix expression with the
 #  all the necessary parentheses so that there is no ambiguity
 #in the order of the expression. 
 
-#  Student Name: Mia Garza
-
-#  Student UT EID: mkg2545
-
-#  Partner Name: Nayantara Roy
-
-#  Partner UT EID: nr27397
-
-#  Course Name: CS 313E
-
-#  Unique Number: 54970
-
-#  Date Created: 11/4
-
-#  Date Last Modified: 11/6
 """
 import sys
 
