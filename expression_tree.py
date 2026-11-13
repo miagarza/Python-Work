@@ -8,6 +8,10 @@
 
 #  Student UT EID: mkg2545
 
+#  Partner Name: Nayantara Roy
+
+#  Partner UT EID: nr27397
+
 #  Course Name: CS 313E
 
 #  Unique Number: 54970
